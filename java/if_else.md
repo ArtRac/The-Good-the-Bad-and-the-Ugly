@@ -21,7 +21,7 @@ if (value != null)
    value.doSomething();
 }
 ```
-better
+better ?
 ```java
 Optional.ofNullable(value).ifPresent(value::doSomething);
 ```
