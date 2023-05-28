@@ -30,6 +30,15 @@ Optional.ofNullable(value).ifPresent(value::doSomething);
 Under construction
 ### ugly
 ### better
+
+Ciekawa konstrukcja !!!!
+```java
+return divBy3 && divBy5 ? "FizzBuzz"
+    : divBy3 ? "Fizz"
+    : divBy5 ? "Buzz"
+    : String.valueOf(i);
+```
+
 ```java
 import java.util.HashMap;
 import java.util.Map;
