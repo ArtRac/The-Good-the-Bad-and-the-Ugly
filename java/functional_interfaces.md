@@ -1,13 +1,32 @@
 Interfejsy funkcyjne zostały wprowadzone do Javy 8 w ramach nowego pakietu java.util.function.  
 Dzielą się na cztery podstawowe kategorie, których skrótowe opisy można zdefiniować w następujący sposób:
 
-Function <T, R> – przyjmuje dowolny obiekt i zwraca dowolny obiekt (T, R),  
-Consumer <T> – przyjmuje dowolny obiekt, ale nic nie zwraca (T, void),  
-Supplier <T> – nic nie przyjmuje, ale zwraca dowolny obiekt (void, T),  
-Predicate <T> – przyjmuje dowolny obiekt, ale zwraca boolean (T, boolean),  
+`Function <T, R>` – przyjmuje dowolny obiekt i zwraca dowolny obiekt (T, R),  
+`Consumer <T>` – przyjmuje dowolny obiekt, ale nic nie zwraca (T, void),  
+`Supplier <T>` – nic nie przyjmuje, ale zwraca dowolny obiekt (void, T),  
+`Predicate <T>` – przyjmuje dowolny obiekt, ale zwraca boolean (T, boolean),  
 
 I wiele innych na [docs.oracle.com](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
+  
+---
+##### Własny intefejs funkcyjny.  
+```java
+public interface Item {     
 
+    String getDescription();
+} 
+
+public class Start {     
+
+    public static void main(String[] args) {
+    
+        Item item = () -> "This is description for MovieItem";
+        String description = item.getDescription();
+        System.out.println(description);
+    }  
+}      
+```
+  
 ---
 ##### Interfejs Predicate:
 
