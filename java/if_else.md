@@ -5,13 +5,36 @@ if (value == null)
    value = newValue
 }
 ```
-```java
-value = Optional.ofNullable(value).orElse(newValue);
-```
 
 ### better
 ```java
 value = (value != null) ? value : newValue;
+
+//1. Gdy nie powinna być null.
+var result = Objects.requireNonNull(value);
+//2. Gdy ma prawo być null.
+//IF-ELSE
+var result = Optional.ofNullable(value).orElse(defaultValue));
+//IF
+Optional.ofNullable(input).ifPresent(v -> println(v));
+//lub
+Optional.ofNullable(input).ifPresent(Sysyem.out::println);
+//---------------------------------
+StringUtils.isBlank(null)      = true
+StringUtils.isBlank("")        = true  
+StringUtils.isBlank(" ")       = true  
+StringUtils.isBlank("bob")     = false  
+
+StringUtils.isEmpty(null)      = true
+StringUtils.isEmpty("")        = true  
+StringUtils.isEmpty(" ")       = false  
+StringUtils.isEmpty("bob")     = false  
+
+StringUtils.isNotEmpty(String param)
+//----------------------------------------------------
+Objects.nonNull(Object obj)
+Objects.isNull(Object obj)
+
 ```
 ---
 
