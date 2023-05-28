@@ -26,3 +26,30 @@ if (value != null)
 ```java
 Optional.ofNullable(value).ifPresent(value::doSomething);
 ```
+---
+Under construction
+### ugly
+### better
+```java
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Supplier;
+
+public class Main {
+    public static void main(String[] args) {
+        Map<Integer, Supplier<String>> mapa = new HashMap<>();
+        mapa.put(1, () -> "Wartość dla przypadku 1");
+        mapa.put(2, () -> "Wartość dla przypadku 2");
+        mapa.put(3, () -> "Wartość dla przypadku 3");
+
+        int zmienna = 2; // Przykładowa wartość zmiennej
+
+        if (mapa.containsKey(zmienna)) {
+            String value = mapa.get(zmienna).get();
+            System.out.println(value);
+        } else {
+            System.out.println("Wartość dla pozostałych przypadków");
+        }
+    }
+}
+```
